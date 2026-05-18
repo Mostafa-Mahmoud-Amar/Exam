@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مراجعات الصف الثالث الثانوي 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#FFD700; --gold2:#FFA500; --blue-dark:#0a0e2a;
+  --blue-light:#2d3a8c; --green:#00e676; --red:#ff1744;
+  --cyan:#00e5ff; --purple:#7c4dff; --white:#fff;
+  --card-bg:rgba(255,255,255,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--white);min-height:100vh;overflow-x:hidden;}
+
+/* BG */
+.bg-stars{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.star{position:absolute;border-radius:50%;background:white;animation:twinkle var(--d) ease-in-out infinite alternate;opacity:0;}
+@keyframes twinkle{0%{opacity:0;transform:scale(.5);}100%{opacity:.8;transform:scale(1);}}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;animation:drift 8s ease-in-out infinite alternate;}
+.orb1{width:500px;height:500px;background:rgba(44,58,180,.3);top:-100px;right:-100px;}
+.orb2{width:400px;height:400px;background:rgba(124,77,255,.2);bottom:-100px;left:-100px;animation-delay:2s;}
+.orb3{width:300px;height:300px;background:rgba(255,215,0,.1);top:50%;left:50%;animation-delay:4s;}
+@keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(30px,30px) scale(1.1);}}
+
+.container{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px;}
+
+/* HEADER */
+.header{text-align:center;padding:40px 20px 25px;animation:slideDown .8s ease;}
+.crown{font-size:3rem;animation:bounce 2s infinite;display:inline-block;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.header h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.5rem,4vw,2.6rem);font-weight:900;
+  background:linear-gradient(135deg,var(--gold),var(--gold2),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0 4px;line-height:1.3;}
+.header p{color:rgba(255,255,255,.6);font-size:.95rem;}
+@keyframes slideDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+
+/* HOME */
+.lessons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:28px;}
+.lesson-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px 22px;
+  cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden;backdrop-filter:blur(10px);text-align:center;
+  animation:fadeInUp .6s ease backwards;}
+.lesson-card:nth-child(1){animation-delay:.1s;}.lesson-card:nth-child(2){animation-delay:.2s;}.lesson-card:nth-child(3){animation-delay:.3s;}
+.lesson-card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--gold);box-shadow:0 20px 60px rgba(255,215,0,.2);}
+.lesson-icon{font-size:2.8rem;margin-bottom:12px;display:block;}
+.lesson-card h2{font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:6px;}
+.lesson-card p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.5;}
+.lesson-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;
+  font-weight:700;padding:4px 14px;border-radius:20px;font-size:.82rem;margin-top:10px;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* QUIZ HEADER */
+#quizScreen{display:none;animation:fadeIn .5s ease;}
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px;}
+.btn-back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;padding:10px 18px;
+  border-radius:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:.92rem;transition:all .3s;display:flex;align-items:center;gap:6px;}
+.btn-back:hover{background:rgba(255,255,255,.2);}
+.progress-bar-wrap{flex:1;max-width:280px;}
+.progress-label{font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:4px;text-align:center;}
+.progress-bar{height:8px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:10px;transition:width .5s ease;}
+.score-display{display:flex;gap:14px;font-size:.9rem;font-weight:700;}
+.score-correct{color:var(--green);}.score-wrong{color:var(--red);}
+
+/* QUESTION CARD */
+.question-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:22px;
+  padding:32px;margin-bottom:18px;backdrop-filter:blur(10px);animation:cardSlideIn .4s ease;}
+@keyframes cardSlideIn{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
+.q-type-badge{display:inline-block;padding:5px 15px;border-radius:20px;font-size:.78rem;font-weight:700;margin-bottom:13px;}
+.badge-fill{background:rgba(0,229,255,.15);color:var(--cyan);border:1px solid var(--cyan);}
+.badge-tf{background:rgba(255,215,0,.15);color:var(--gold);border:1px solid var(--gold);}
+.badge-write{background:rgba(124,77,255,.15);color:#b388ff;border:1px solid var(--purple);}
+.q-number{font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:6px;}
+.q-text{font-size:clamp(.98rem,2.3vw,1.18rem);font-weight:700;line-height:1.75;color:var(--white);margin-bottom:22px;}
+
+/* ===== TRUE/FALSE ===== */
+.tf-buttons{display:flex;gap:14px;margin-top:5px;}
+.tf-btn{flex:1;padding:18px;border-radius:16px;border:2px solid;font-family:'Cairo',sans-serif;
+  font-size:1.2rem;font-weight:900;cursor:pointer;transition:all .25s ease;}
+.tf-btn-true{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.4);color:var(--green);}
+.tf-btn-false{background:rgba(255,23,68,.08);border-color:rgba(255,23,68,.4);color:var(--red);}
+.tf-btn:hover:not(:disabled){transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.3);}
+.tf-btn.correct{background:rgba(0,230,118,.25);border-color:var(--green);animation:pulse-green .5s ease;}
+.tf-btn.wrong{background:rgba(255,23,68,.25);border-color:var(--red);animation:shake .5s ease;}
+@keyframes pulse-green{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+
+/* ===== WRITE ANSWER ===== */
+.write-area{display:flex;flex-direction:column;gap:12px;}
+.answer-input{width:100%;min-height:90px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);
+  border-radius:14px;padding:14px 16px;color:white;font-family:'Cairo',sans-serif;font-size:1rem;
+  resize:vertical;transition:border-color .3s;}
+.answer-input:focus{outline:none;border-color:var(--cyan);}
+.answer-input::placeholder{color:rgba(255,255,255,.3);}
+.btn-show-answer{padding:13px 24px;background:linear-gradient(135deg,var(--blue-light),var(--purple));
+  border:none;border-radius:13px;color:white;font-family:'Cairo',sans-serif;font-size:1rem;
+  font-weight:700;cursor:pointer;transition:all .3s;align-self:flex-start;}
+.btn-show-answer:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,77,255,.4);}
+.model-answer{background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.3);border-radius:14px;
+  padding:16px 18px;display:none;animation:fadeIn .3s ease;}
+.model-answer .ma-label{font-size:.82rem;color:var(--cyan);font-weight:700;margin-bottom:8px;}
+.model-answer .ma-text{font-size:1rem;line-height:1.7;color:rgba(255,255,255,.9);}
+.self-check{display:none;flex-direction:column;gap:10px;margin-top:12px;animation:fadeIn .3s ease;}
+.self-check p{font-size:.95rem;color:rgba(255,255,255,.7);text-align:center;}
+.self-check-btns{display:flex;gap:12px;}
+.sc-btn{flex:1;padding:13px;border-radius:13px;border:2px solid;font-family:'Cairo',sans-serif;
+  font-size:1rem;font-weight:700;cursor:pointer;transition:all .25s;}
+.sc-correct{background:rgba(0,230,118,.1);border-color:var(--green);color:var(--green);}
+.sc-wrong{background:rgba(255,23,68,.1);border-color:var(--red);color:var(--red);}
+.sc-btn:hover{transform:translateY(-3px);}
+
+/* FEEDBACK */
+.feedback-box{margin-top:13px;padding:12px 16px;border-radius:12px;font-size:.93rem;font-weight:700;display:none;animation:fadeIn .3s ease;}
+.feedback-box.correct{background:rgba(0,230,118,.1);border:1px solid var(--green);color:var(--green);}
+.feedback-box.wrong{background:rgba(255,23,68,.1);border:1px solid var(--red);color:var(--red);}
+
+/* NEXT BUTTON */
+.btn-next{display:none;width:100%;margin-top:18px;padding:15px;
+  background:linear-gradient(135deg,var(--blue-light),var(--purple));
+  border:none;border-radius:15px;color:white;font-family:'Cairo',sans-serif;
+  font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .3s;}
+.btn-next:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(124,77,255,.4);}
+
+/* RESULTS */
+#resultsScreen{display:none;animation:fadeIn .6s ease;}
+.results-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:22px;
+  padding:38px 28px;text-align:center;backdrop-filter:blur(10px);}
+.result-trophy{font-size:5rem;animation:bounce 2s infinite;display:inline-block;margin-bottom:12px;}
+.result-title{font-size:1.9rem;font-weight:900;color:var(--gold);margin-bottom:8px;}
+.result-subtitle{color:rgba(255,255,255,.6);margin-bottom:25px;}
+.score-percent{font-size:3.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
+.stat-box{background:rgba(255,255,255,.05);border-radius:14px;padding:18px 8px;border:1px solid rgba(255,255,255,.1);}
+.stat-box .num{font-size:2.3rem;font-weight:900;}.stat-box .lbl{font-size:.82rem;color:rgba(255,255,255,.6);margin-top:4px;}
+.stat-correct .num{color:var(--green);}.stat-wrong .num{color:var(--red);}.stat-total .num{color:var(--cyan);}
+.summary-title{font-size:1.2rem;font-weight:700;color:var(--gold);margin:28px 0 13px;text-align:right;}
+.summary-list{display:flex;flex-direction:column;gap:9px;}
+.summary-item{background:rgba(255,255,255,.04);border-radius:13px;padding:14px 16px;text-align:right;
+  border-right:4px solid;animation:fadeInUp .4s ease backwards;}
+.summary-item.s-correct{border-color:var(--green);}.summary-item.s-wrong{border-color:var(--red);}
+.summary-item .s-q{font-size:.92rem;font-weight:700;color:white;line-height:1.6;margin-bottom:5px;}
+.summary-item .s-a{font-size:.85rem;}
+.s-correct .s-a{color:var(--green);}.s-wrong .s-a{color:rgba(255,255,255,.5);}
+.s-wrong .s-correct-ans{color:var(--green);margin-top:3px;font-size:.83rem;}
+.btn-retry,.btn-home{padding:13px 28px;border:none;border-radius:13px;font-family:'Cairo',sans-serif;
+  font-size:.98rem;font-weight:700;cursor:pointer;transition:all .3s;margin:7px;}
+.btn-retry{background:linear-gradient(135deg,var(--green),#00bcd4);color:#000;}
+.btn-home{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;}
+.btn-retry:hover,.btn-home:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.3);}
+
+.footer{text-align:center;padding:28px;color:rgba(255,255,255,.3);font-size:.83rem;}
+.footer span{color:var(--gold);font-weight:700;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* Confetti */
+.confetti-piece{position:fixed;top:-20px;border-radius:2px;animation:confettiFall linear forwards;z-index:999;pointer-events:none;}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
+
+@media(max-width:600px){
+  .question-card{padding:20px;}
+  .stats-grid{gap:7px;}.stat-box{padding:12px 5px;}.stat-box .num{font-size:1.8rem;}
+  .quiz-header{flex-direction:column;align-items:stretch;}.score-display{justify-content:center;}
+  .tf-buttons{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-stars" id="bgStars"></div>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+
+<div class="container">
+
+  <div class="header">
+    <span class="crown">🎓</span>
+    <h1>مراجعات الثالث الثانوي 2026</h1>
+    <p>اختبر معلوماتك وتحدى نفسك! 🚀</p>
+  </div>
+
+  <!-- HOME -->
+  <div id="homeScreen">
+    <div class="lessons-grid">
+      <div class="lesson-card" onclick="startLesson(0)">
+        <span class="lesson-icon">🌿</span>
+        <h2>الدرس الأول</h2>
+        <p>أسباب المشكلات البيئية والمجتمعية والعادات الخاطئة</p>
+        <span class="lesson-badge">5 أسئلة</span>
+      </div>
+      <div class="lesson-card" onclick="startLesson(1)">
+        <span class="lesson-icon">🏛️</span>
+        <h2>الدرس الثاني</h2>
+        <p>السدود والقناطر المصرية وقناة السويس</p>
+        <span class="lesson-badge">51 سؤال</span>
+      </div>
+      <div class="lesson-card" onclick="startLesson(2)">
+        <span class="lesson-icon">🌍</span>
+        <h2>الدرس الثالث</h2>
+        <p>المشكلات البيئية والمناخية والتنوع البيولوجي</p>
+        <span class="lesson-badge">41 سؤال</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quizScreen">
+    <div class="quiz-header">
+      <button class="btn-back" onclick="goHome()">→ الرئيسية</button>
+      <div class="progress-bar-wrap">
+        <div class="progress-label" id="progressLabel">السؤال 1 من 10</div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      </div>
+      <div class="score-display">
+        <span class="score-correct">✅ <span id="scoreCorrect">0</span></span>
+        <span class="score-wrong">❌ <span id="scoreWrong">0</span></span>
+      </div>
+    </div>
+
+    <div class="question-card" id="questionCard">
+      <div class="q-type-badge" id="qTypeBadge"></div>
+      <div class="q-number" id="qNumber"></div>
+      <div class="q-text" id="qText"></div>
+      <div id="answerArea"></div>
+      <div class="feedback-box" id="feedbackBox"></div>
+      <button class="btn-next" id="btnNext" onclick="nextQuestion()">السؤال التالي ←</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultsScreen">
+    <div class="results-card">
+      <span class="result-trophy" id="resultTrophy">🏆</span>
+      <div class="result-title" id="resultTitle">أحسنت!</div>
+      <div class="result-subtitle" id="resultSubtitle">إليك نتيجتك</div>
+      <div class="score-percent" id="scorePercent">0%</div>
+      <div class="stats-grid">
+        <div class="stat-box stat-correct"><div class="num" id="rCorrect">0</div><div class="lbl">✅ صح</div></div>
+        <div class="stat-box stat-wrong"><div class="num" id="rWrong">0</div><div class="lbl">❌ غلط</div></div>
+        <div class="stat-box stat-total"><div class="num" id="rTotal">0</div><div class="lbl">📝 إجمالي</div></div>
+      </div>
+      <div>
+        <button class="btn-retry" onclick="retryLesson()">🔄 إعادة المحاولة</button>
+        <button class="btn-home" onclick="goHome()">🏠 الرئيسية</button>
+      </div>
+      <div class="summary-title">📋 مراجعة الأسئلة والإجابات</div>
+      <div class="summary-list" id="summaryList"></div>
+    </div>
+  </div>
+
+  <div class="footer">تم تصميمه بواسطة <span>مصطفى محمود عمار</span> ❤️</div>
+</div>
+
+<script>
+// ===== STARS =====
+(function(){
+  const bg=document.getElementById('bgStars');
+  for(let i=0;i<120;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*3+1;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${Math.random()*4+2}s;animation-delay:${Math.random()*5}s`;
+    bg.appendChild(s);
+  }
+})();
+
+// ===== CONFETTI =====
+function launchConfetti(mini=false){
+  const colors=['#FFD700','#00e676','#00e5ff','#ff6090','#b388ff','#ff9800'];
+  const count=mini?15:60;
+  for(let i=0;i<count;i++){
+    setTimeout(()=>{
+      const c=document.createElement('div');c.className='confetti-piece';
+      c.style.cssText=`left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};width:${Math.random()*10+5}px;height:${Math.random()*10+5}px;animation-duration:${Math.random()*2+1.5}s;border-radius:${Math.random()>.5?'50%':'2px'}`;
+      document.body.appendChild(c);setTimeout(()=>c.remove(),4000);
+    },i*(mini?40:60));
+  }
+}
+
+// ===== SHUFFLE =====
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+
+// ===== DATA =====
+// أنواع الأسئلة:
+// 'tf'    → صح أم خطأ (زرارين)
+// 'write' → الطالب يكتب ويقارن بالإجابة بنفسه
+// 'fill'  → إكمال: الطالب يكتب ويقارن
+
+const LESSONS = [
+// =========== الدرس الأول ===========
+{ name:'الدرس الأول', questions:[
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: حدوث العديد من المخاطر البيئية في الآونة الأخيرة',
+    answer:'بسبب الأنشطة البشرية والتحضر والعولمة وزيادة عمليات التصنيع والاستهلاك المفرط لموارد الأرض والممارسات الخاطئة في الصيد والزراعة.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية قناة السويس متشعبة',
+    answer:'لأنها تربط البحر الأحمر بالبحر المتوسط وتوفر ممراً ملاحياً عالمياً يوفر المسافة والوقت ويربط التجارة بين الشرق والغرب، كما تدر عائداً اقتصادياً كبيراً لمصر.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: وجود المشكلات البيئية',
+    answer:'بسبب الأنشطة البشرية والتحضر والعولمة وزيادة التصنيع والممارسات الخاطئة في الصيد والزراعة والاستهلاك المفرط للموارد.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: القناطر لها مزايا عديدة',
+    answer:'لأن القناطر تتحكم في مرور المياه وترفع منسوبها وتحوّلها إلى الترع والأراضي الزراعية، وتحمي من الفيضان وتنظّم الري على مدار العام.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: توجد علاقة وطيدة بين انتشار الأمراض والمجتمعات الفقيرة',
+    answer:'لأن الفقر يؤدي إلى انعدام الأمن الغذائي وتدني مستويات الصرف الصحي وقلة مياه الشرب النظيفة وسوء التغذية والتلوث البيئي، كل هذه العوامل تتسبب في انتشار الأمراض.' },
+]},
+
+// =========== الدرس الثاني ===========
+{ name:'الدرس الثاني', questions:[
+  // إكمال العبارات
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'بناء هندسي يُقام فوق وادٍ أو منخفض بهدف حجز المياه وللحماية من الفيضان والجفاف ...',
+    answer:'السـد' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'القنطرة هي ...',
+    answer:'حاجز إنشائي يعترض مجرى النهر وبه بوابات تتحكم في مرور المياه' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'عندما تكون قيمة الواردات أكبر من قيمة الصادرات يسمى ذلك ...',
+    answer:'العجز التجاري' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'عندما تكون قيمة الواردات أقل من قيمة الصادرات يسمى ذلك ...',
+    answer:'الفائض التجاري' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'أهم السدود في مصر ...',
+    answer:'السد العالي - سد قوشية - سد إسنا - سد الروافعة - سد الكفرة' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'أهم القناطر في مصر ...',
+    answer:'القناطر الخيرية - قناطر أسيوط - قناطر ديروط - قناطر نجع حمادي - قناطر إدفينا - قناطر زفتى' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'سد الكفرة قام المصريون بتأسيسه في وادي ... وقد بُني تقريباً عام 2650 ق.م',
+    answer:'الصحراء الشرقية' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'سد الكفرة قام المصريون ببنائه بهدف التحكم في ...',
+    answer:'الفيضان' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'سد ............ تم استخدامه لتنظيم دخول المياه من أجل تخزينها',
+    answer:'سد قوشية' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'بدأ العمل في إنشاء سد ........... عام 1898 وبلغت سعته التخزينية مليار متر مكعب',
+    answer:'سد أسوان' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'تم إنشاء سد بنائي مقوس في منطقة ........... شمال جبل الحلال في وادي العريش وأنشئ عام 1946م لتخزين مياه السيول',
+    answer:'سيناء' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'أمر محمد علي باشا بتنفيذ ........... عام 1833 ولكن التنفيذ الفعلي بدأ عام 1843',
+    answer:'القناطر الخيرية' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'وتم استكمال القناطر الخيرية في عهد ........... و...........',
+    answer:'عباس الأول وسعيد باشا' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'قناطر أسيوط تم تشييدها من أجل تحويل مياه النهر إلى أكبر قناة للري في مصر وهي قناة ...',
+    answer:'قناة الإبراهيمية' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'قناطر ديروط عُرفت باسم ...',
+    answer:'قناطر التقسيم' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'قناطر ........... تقع شمال نجع حمادي',
+    answer:'قناطر قنا' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'أُنشئت قناطر نجع حمادي في عهد الملك فؤاد الأول وافتُتحت عام ...',
+    answer:'1930' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'تم بناء قناطر إسنا في عهد الخديوي عباس عام ...',
+    answer:'1908' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'قناطر ........... هي الوحيدة التي تحجز مياه نهر النيل عن مياه البحر المتوسط',
+    answer:'قناطر إدفينا' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'قناطر زفتى تم بناؤها عام ........... في عهد الخديوي عباس حلمي الثاني وأُعيد تجديدها عام 1954',
+    answer:'1902' },
+  // صح أم خطأ
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'القناطر تستطيع حفظ كميات أكبر من المياه لعدة سنوات',
+    answer:'خطأ ✗ — السدود هي التي تحفظ كميات كبيرة من المياه لعدة سنوات، القناطر تتحكم في مرور المياه فقط.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'السدود لا تستطيع حفظ المياه خلفها لفترة طويلة لكنها ترشد المياه',
+    answer:'خطأ ✗ — السدود تستطيع حجز المياه لفترات طويلة، أما القناطر فهي التي تتحكم في مرور المياه.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'قناطر نجع حمادي أُنشئت في عهد الملك فؤاد الثاني وافتُتحت عام 1930',
+    answer:'خطأ ✗ — أُنشئت في عهد الملك فؤاد الأوّل وليس الثاني.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'قناطر زفتى تم بناؤها عام 1902 في عهد الخديوي عباس حلمي الثاني ولم تُجدَّد مرة أخرى',
+    answer:'خطأ ✗ — أُعيد تجديدها عام 1954م.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'يوجد سد واحد في مصر هو السد العالي',
+    answer:'خطأ ✗ — في مصر عدة سدود: السد العالي، سد قوشية، سد إسنا، سد الروافعة، سد الكفرة وغيرها.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'الغرض من إنشاء القناطر الخيرية هو رفع منسوب المياه',
+    answer:'صح ✓ — الهدف من القناطر الخيرية هو رفع منسوب مياه النيل لتيسير الري.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'تم بناء قناطر إسنا الجديدة خلف القناطر القديمة',
+    answer:'صح ✓ — قناطر إسنا الجديدة بُنيت خلف القديمة.' },
+  // بم تفسر
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية السدود عند إنشائها',
+    answer:'لأنها تحجز المياه وتخزّنها لتوليد الكهرباء وتوفير مياه الري والشرب والحماية من خطر الفيضانات والجفاف.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: للقناطر أهمية تتضح في الأراضي الزراعية',
+    answer:'لأنها ترفع منسوب مياه النيل وتحوّلها إلى الترع والأراضي الزراعية مما يضمن وصول المياه للحقول طوال العام.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية السد العالي بمصر',
+    answer:'يوفر السد العالي الكهرباء لمصر ويحجز مياه الفيضان وينظّم الري ويحمي البلاد من خطر الجفاف ويتيح الزراعة المستديمة.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: يعتبر سد قوشية هو الأقدم في مصر بل في العالم أجمع',
+    answer:'لأنه أول سد في تاريخ البشرية، تأسّس قبل 2900 ق.م على يد الملك مينا لتخزين مياه النيل والتحكم في الفيضان.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية سد الروافعة',
+    answer:'يخزّن مياه السيول ويحوّلها لأغراض الري ويحمي المناطق المجاورة من أخطار الفيضانات.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية القناطر الخيرية التي بناها محمد علي',
+    answer:'ترفع منسوب مياه النيل وتحوّلها إلى شبكة الترع والأقنية لري الأراضي الزراعية في الدلتا والوجه البحري.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية قناطر إدفينا',
+    answer:'هي الوحيدة التي تحجز مياه نهر النيل عن مياه البحر المتوسط، وتربط محافظة كفر الشيخ بالإسكندرية.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: أهمية قناطر زفتى',
+    answer:'تتحكم في تدفق مياه النيل وتنظّمه، وهي من الآثار المعمارية الفريدة التي بُنيت في عهد الخديوي عباس حلمي الثاني.' },
+  // اكتب ما تشير إليه
+  { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
+    text:'إنشاء هندسي يُقام فوق وادٍ أو منخفض بهدف حجز المياه واستخدامها في توليد الكهرباء',
+    answer:'السـد' },
+  { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
+    text:'حاجز إنشائي يعترض مجرى النهر وبه بوابات تتحكم في مرور المياه',
+    answer:'القنطرة' },
+  { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
+    text:'مجموعة سدود على نهر النيل أُنشئت من أجل تحويل مياه النيل إلى ترعة الإبراهيمية',
+    answer:'قناطر أسيوط' },
+  { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
+    text:'قناطر تم بناؤها عام 1869 وعُرفت بقناطر التقسيم وهي عدة قناطر متصلة',
+    answer:'قناطر ديروط' },
+  { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
+    text:'من الآثار المعمارية الفريدة وتم بناؤها في عهد الخديوي عباس حلمي',
+    answer:'قناطر زفتى' },
+  { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
+    text:'قناطر تحجز مياه النيل عن مياه البحر المتوسط وهي الممر الذي يربط كفر الشيخ بالإسكندرية',
+    answer:'قناطر إدفينا' },
+  // من هو
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'شُيِّد في عهده السد العالي وتم افتتاحه في 15 يناير 1971م',
+    answer:'جمال عبد الناصر (بدأ الإنشاء) وأنور السادات (الافتتاح)' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'بنى سد قوشية — أول سد في التاريخ قبل 2900 ق.م',
+    answer:'الملك مينا' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'سد قام المصريون بتأسيسه في وادٍ بالصحراء الشرقية عام 2650 ق.م بهدف التحكم في الفيضان',
+    answer:'سد الكفرة' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'تم بناء قناطر إسنا في عهده عام 1908 للتحكم في تدفق المياه أثناء الفيضان',
+    answer:'الخديوي عباس حلمي الثاني' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'وضع حجر أساس سد أسوان',
+    answer:'الخديوي عباس حلمي الثاني' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'أمر بتنفيذ القناطر الخيرية عام 1833 ولكن التنفيذ الفعلي بدأ عام 1843',
+    answer:'محمد علي باشا' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'أكبر قناة للري في مصر تم إنشاء قناطر أسيوط بالقرب منها',
+    answer:'قناة الإبراهيمية' },
+  { kind:'write', type:'من هو؟', badge:'badge-write',
+    text:'تم في عهده بناء قناطر زفتى عام 1902',
+    answer:'الخديوي عباس حلمي الثاني' },
+  // اكتب ما تعرفه
+  { kind:'write', type:'اكتب ما تعرفه', badge:'badge-write',
+    text:'الفرق بين القناطر والسدود',
+    answer:'السد: بناء هندسي يُقام فوق وادٍ لحجز كميات كبيرة من المياه لسنوات وتوليد الكهرباء.\nالقنطرة: حاجز إنشائي يعترض مجرى النهر وبه بوابات تتحكم في مرور المياه وترفع منسوبها دون تخزينها.' },
+]},
+
+// =========== الدرس الثالث ===========
+{ name:'الدرس الثالث', questions:[
+  // إكمال
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'أهم المشكلات البيئية ...',
+    answer:'تغير المناخ، وفقدان التنوع البيولوجي، وتلوث البيئة' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'الزيادة السكانية هي ...',
+    answer:'الزيادة في عدد السكان بمعدل يفوق الموارد المتاحة مما يشكّل ضغطاً كبيراً على البيئة' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'من أبرز المشكلات البيئية ...',
+    answer:'تغير المناخ وفقدان التنوع البيولوجي والتلوث البيئي' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'من أسباب مشاكل البيئة ...',
+    answer:'الأنشطة البشرية والتحضر والعولمة وزيادة التصنيع والاستهلاك المفرط للموارد والممارسات الخاطئة' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'تزداد ........... في المجتمعات الفقيرة التي ينعدم أمنها الغذائي',
+    answer:'الأمراض' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'توجد علاقة وطيدة بين المعتقدات التي يؤمن بها الشخص وبين ...',
+    answer:'تدهور البيئة أو الإساءة إليها' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'من أمثلة العادات الخاطئة في المجتمع الذي نعيشه ...',
+    answer:'الأخذ بالثأر، والتشاؤم من بعض الحيوانات مما يؤدي إلى قتلها' },
+  { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
+    text:'سد الكفرة قام المصريون بتأسيسه في وادٍ ........... وقد بُني تقريباً عام 2650 ق.م',
+    answer:'في الصحراء الشرقية' },
+  // صح وخطأ
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'الأنشطة البشرية والتحضر والعولمة وزيادة عمليات التصنيع أدت إلى مشاكل بيئية',
+    answer:'صح ✓ — هذه العوامل مجتمعةً أفرزت مشاكل بيئية خطيرة.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'الاستهلاك المفرط لموارد الأرض أدى إلى مشاكل بيئية',
+    answer:'صح ✓ — الاستهلاك المفرط يستنزف الموارد ويسبب اختلالاً بيئياً.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'التوسع الاقتصادي الكبير خاصةً بعد الحرب العالمية الثانية أدى إلى مشاكل بيئية',
+    answer:'صح ✓ — التوسع الصناعي الكبير بعد الحرب ضاعف الانبعاثات والتلوث.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'الممارسات الخاطئة أثناء الصيد والزراعة أدت إلى مشاكل بيئية',
+    answer:'صح ✓ — هذه الممارسات تستنزف الموارد وتدمر التنوع البيولوجي.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'يتوقع بعض العلماء أن تغير المناخ سوف يؤدي إلى القضاء على التنوع البيولوجي',
+    answer:'صح ✓ — تغير المناخ يهدد انقراض كثير من الكائنات الحية.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'يتوقع بعض العلماء أن تغير المناخ سوف يؤدي إلى ظهور عدة مشاكل بيئية أخرى',
+    answer:'صح ✓ — تغير المناخ يتسبب في سلسلة من المشكلات البيئية المتشابكة.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'تغير النظم البيئية البرية والبحرية وانقراض بعض الحيوانات',
+    answer:'صح ✓ — التلوث وتغير المناخ أدّيا لتغير النظم البيئية وانقراض بعض الكائنات.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'الفقر من التحديات المستمرة التي تعترف بها معظم الجهات الإنسانية',
+    answer:'صح ✓ — الفقر معترف به دولياً كتحدٍّ إنساني رئيسي.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'يساهم الفقر في ظهور العديد من الأنماط التي تؤدي إلى تأثيرات إيجابية على النظم البيئية',
+    answer:'خطأ ✗ — الفقر يؤدي إلى تأثيرات سلبية على النظم البيئية لا إيجابية.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'الخلل في النظام البيئي يحدث بسبب الاستغلال المفرط للموارد الحيوانية والنباتية وحرق الغابات',
+    answer:'صح ✓ — الاستغلال المفرط وحرق الغابات من أبرز أسباب الخلل البيئي.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'ينتج عن تحويل الأراضي إلى منشآت حديثة حدوث خلل في النظام البيئي',
+    answer:'صح ✓ — تحويل الأراضي الطبيعية يُدمّر الموائل الطبيعية ويُخلّ بالنظام البيئي.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'تملّح التربة أدى إلى حدوث شح في المياه العذبة',
+    answer:'صح ✓ — تملّح التربة يفسد طبقات المياه الجوفية ويُقلل المياه العذبة.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'زيادة ملوحة مجاري الأنهار ليس لها علاقة بنقص المياه العذبة',
+    answer:'خطأ ✗ — زيادة ملوحة الأنهار تقلل المياه العذبة الصالحة للاستخدام مباشرةً.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'بالرغم من زيادة معدلات الإنتاج الغذائي عن معدلات النمو السكاني إلا أن هذه الممارسات أدت إلى انخفاض جودة المنتجات والأرض الزراعية',
+    answer:'صح ✓ — الضغط على الإنتاج الزراعي أضرّ بخصوبة التربة وجودة المنتجات.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'لا توجد علاقة وطيدة بين المعتقدات التي يؤمن بها الشخص وبين تدهور البيئة أو الإساءة إليها',
+    answer:'خطأ ✗ — المعتقدات الخاطئة تؤثر في السلوك تجاه البيئة وتتسبب في تدهورها.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'تزداد الأمراض في المجتمعات الفقيرة التي ينعدم أمنها الغذائي',
+    answer:'صح ✓ — انعدام الأمن الغذائي وسوء التغذية يزيدان من الأمراض.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'لا تحدث الأمراض نتيجة تدني مستويات نظام الصرف الصحي',
+    answer:'خطأ ✗ — تدني الصرف الصحي من أبرز أسباب انتشار الأمراض.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'لا تحدث الأمراض نتيجة انخفاض كميات مياه الشرب وسوء التغذية والتلوث',
+    answer:'خطأ ✗ — هذه العوامل مجتمعةً من أهم أسباب انتشار الأمراض.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'لا تحدث الأمراض نتيجة عدم العثور على أماكن مناسبة للسكن',
+    answer:'خطأ ✗ — سوء السكن يُسهم في انتشار الأمراض.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'يوجد بالمجتمع المصري سلوكيات خاطئة مثل الأخذ بالثأر',
+    answer:'صح ✓ — الأخذ بالثأر سلوك خاطئ موجود في بعض المجتمعات.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
+    text:'المعتقدات الخاطئة مثل التشاؤم والتفاؤل من الحيوانات تؤدي إلى حدوث مشكلة في البيئة',
+    answer:'صح ✓ — التشاؤم من بعض الحيوانات يؤدي لقتلها مما يُخل بالتوازن البيئي.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'نهر النيل من أطول الأنهار في العالم حيث يمر بـ 20 دولة أفريقية',
+    answer:'خطأ ✗ — نهر النيل يمر بـ 11 دولة أفريقية وليس 20.' },
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+    text:'لا توجد مشكلات بيئية في مصر',
+    answer:'خطأ ✗ — توجد في مصر مشكلات بيئية عديدة كتلوث الهواء والمياه وتآكل الأراضي.' },
+  // بم تفسر
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: حدوث العديد من المخاطر البيئية في الآونة الأخيرة',
+    answer:'بسبب الأنشطة البشرية والتحضر والعولمة وزيادة التصنيع والاستهلاك المفرط للموارد.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: إمكانية تحويل محافظات القناة إلى مراكز صناعية وتجارية وسياحية عالمية',
+    answer:'لأن موقعها الاستراتيجي على قناة السويس يجعلها ملتقى التجارة الدولية ومحوراً للنقل البحري العالمي.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: وجود المشكلات البيئية',
+    answer:'بسبب الأنشطة البشرية والتحضر والعولمة وزيادة التصنيع والممارسات الخاطئة في الصيد والزراعة.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: توجد علاقة وطيدة بين انتشار الأمراض والمجتمعات الفقيرة',
+    answer:'لأن الفقر يؤدي لانعدام الأمن الغذائي وتدني الصرف الصحي وقلة مياه الشرب وسوء التغذية والتلوث.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: ظهور العواصف المطيرة المدمرة',
+    answer:'بسبب الاحترار العالمي وتغير المناخ الناجمَين عن تراكم الانبعاثات الكربونية وزيادة التصنيع.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: تغير معدلات درجات الحرارة بين عام وآخر',
+    answer:'بسبب الاحترار العالمي وتراكم غازات الدفيئة في الغلاف الجوي نتيجة الأنشطة البشرية.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: حدوث تغيرات في المناخ على المدى البعيد',
+    answer:'بسبب تراكم الانبعاثات الكربونية وزيادة التصنيع واستنزاف الموارد على مدى عقود.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: حدوث خلل في النظام البيئي',
+    answer:'بسبب الاستغلال المفرط للموارد الحيوانية والنباتية وحرق الغابات وتحويل الأراضي لمنشآت.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: حدوث مشكلة شح المياه العذبة',
+    answer:'بسبب تملّح التربة وزيادة ملوحة مجاري الأنهار والاستخدام المفرط للمياه الجوفية.' },
+  { kind:'write', type:'بم تفسر', badge:'badge-write',
+    text:'فسّر: انخفاض جودة المنتجات والأرض الزراعية',
+    answer:'بسبب الضغط المفرط على الإنتاج الزراعي والممارسات الخاطئة التي تُفقر التربة وتُنهك خصوبتها.' },
+]},
+];
+
+// ===== STATE =====
+let currentLesson=0, currentQuestions=[], currentIndex=0;
+let correctCount=0, wrongCount=0, answered=false, userAnswers=[];
+
+// ===== HELPERS =====
+function prepareQuestions(qs){
+  return shuffle(qs); // خلط ترتيب الأسئلة فقط (بدون خلط إجابات لأن الكتابة مفتوحة)
+}
+
+// ===== NAV =====
+function startLesson(idx){
+  currentLesson=idx;
+  currentQuestions=prepareQuestions(LESSONS[idx].questions);
+  currentIndex=0; correctCount=0; wrongCount=0; userAnswers=[]; answered=false;
+  document.getElementById('homeScreen').style.display='none';
+  document.getElementById('resultsScreen').style.display='none';
+  document.getElementById('quizScreen').style.display='block';
+  updateScore(); showQuestion();
+}
+function goHome(){
+  document.getElementById('quizScreen').style.display='none';
+  document.getElementById('resultsScreen').style.display='none';
+  document.getElementById('homeScreen').style.display='block';
+}
+function retryLesson(){ startLesson(currentLesson); }
+
+// ===== SHOW QUESTION =====
+function showQuestion(){
+  const q=currentQuestions[currentIndex];
+  const total=currentQuestions.length;
+  document.getElementById('progressLabel').textContent=`السؤال ${currentIndex+1} من ${total}`;
+  document.getElementById('progressFill').style.width=`${(currentIndex/total)*100}%`;
+  const badge=document.getElementById('qTypeBadge');
+  badge.textContent=q.type; badge.className=`q-type-badge ${q.badge}`;
+  document.getElementById('qNumber').textContent=`السؤال رقم ${currentIndex+1}`;
+  document.getElementById('qText').textContent=q.text;
+  document.getElementById('feedbackBox').style.display='none';
+  document.getElementById('btnNext').style.display='none';
+  document.getElementById('btnNext').textContent=currentIndex<total-1?'السؤال التالي ←':'🏆 عرض النتائج';
+  answered=false;
+
+  const area=document.getElementById('answerArea');
+  area.innerHTML='';
+
+  if(q.kind==='tf'){
+    area.innerHTML=`
+      <div class="tf-buttons">
+        <button class="tf-btn tf-btn-true" onclick="answerTF(true)">✅ صح</button>
+        <button class="tf-btn tf-btn-false" onclick="answerTF(false)">❌ خطأ</button>
+      </div>`;
+  } else {
+    // fill or write
+    const label = q.kind==='fill' ? 'أكمل الإجابة:' : 'اكتب إجابتك:';
+    area.innerHTML=`
+      <div class="write-area">
+        <textarea class="answer-input" id="userInput" placeholder="${label}"></textarea>
+        <button class="btn-show-answer" onclick="showModelAnswer()">👁️ أظهر الإجابة الصحيحة</button>
+        <div class="model-answer" id="modelAnswer">
+          <div class="ma-label">✅ الإجابة الصحيحة:</div>
+          <div class="ma-text" id="maText"></div>
+        </div>
+        <div class="self-check" id="selfCheck">
+          <p>كيف كانت إجابتك؟</p>
+          <div class="self-check-btns">
+            <button class="sc-btn sc-correct" onclick="selfMark(true)">✅ صح كنت عارفها</button>
+            <button class="sc-btn sc-wrong" onclick="selfMark(false)">❌ غلطت</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // animate
+  const card=document.getElementById('questionCard');
+  card.style.animation='none'; card.offsetHeight; card.style.animation='cardSlideIn .4s ease';
+}
+
+// ===== TRUE/FALSE =====
+function answerTF(userAnswer){
+  if(answered) return;
+  answered=true;
+  const q=currentQuestions[currentIndex];
+  const isCorrect=(userAnswer===q.correct);
+  const btns=document.querySelectorAll('.tf-btn');
+  btns.forEach(b=>b.disabled=true);
+  // highlight
+  if(userAnswer===true) btns[0].classList.add(isCorrect?'correct':'wrong');
+  else btns[1].classList.add(isCorrect?'correct':'wrong');
+  // if wrong, show which is correct
+  if(!isCorrect){
+    if(q.correct===true) btns[0].classList.add('correct');
+    else btns[1].classList.add('correct');
+  }
+  const fb=document.getElementById('feedbackBox');
+  fb.className=`feedback-box ${isCorrect?'correct':'wrong'}`;
+  fb.innerHTML=isCorrect?`✅ إجابة صحيحة! ${q.answer}`:`❌ إجابة خاطئة! ${q.answer}`;
+  fb.style.display='block';
+  if(isCorrect){correctCount++;launchConfetti(true);}else{wrongCount++;}
+  userAnswers.push({text:q.text, isCorrect, modelAnswer:q.answer, kind:'tf'});
+  updateScore();
+  document.getElementById('btnNext').style.display='block';
+}
+
+// ===== SHOW MODEL ANSWER =====
+function showModelAnswer(){
+  const q=currentQuestions[currentIndex];
+  document.getElementById('maText').textContent=q.answer;
+  document.getElementById('modelAnswer').style.display='block';
+  document.getElementById('selfCheck').style.display='flex';
+  document.querySelector('.btn-show-answer').disabled=true;
+}
+
+// ===== SELF MARK =====
+function selfMark(isCorrect){
+  if(answered) return;
+  answered=true;
+  const q=currentQuestions[currentIndex];
+  document.querySelectorAll('.sc-btn').forEach(b=>b.disabled=true);
+  if(isCorrect){correctCount++;launchConfetti(true);}else{wrongCount++;}
+  userAnswers.push({text:q.text, isCorrect, modelAnswer:q.answer, kind:q.kind});
+  updateScore();
+  document.getElementById('btnNext').style.display='block';
+}
+
+function nextQuestion(){
+  if(currentIndex<currentQuestions.length-1){currentIndex++;showQuestion();}
+  else{showResults();}
+}
+function updateScore(){
+  document.getElementById('scoreCorrect').textContent=correctCount;
+  document.getElementById('scoreWrong').textContent=wrongCount;
+}
+
+// ===== RESULTS =====
+function showResults(){
+  document.getElementById('quizScreen').style.display='none';
+  document.getElementById('resultsScreen').style.display='block';
+  const total=currentQuestions.length;
+  const pct=Math.round((correctCount/total)*100);
+  document.getElementById('scorePercent').textContent=pct+'%';
+  document.getElementById('rCorrect').textContent=correctCount;
+  document.getElementById('rWrong').textContent=wrongCount;
+  document.getElementById('rTotal').textContent=total;
+  let trophy='🏆',title='',sub='';
+  if(pct>=90){trophy='🥇';title='ممتاز! أنت نجم!';sub='أداء رائع، استمر!';launchConfetti();}
+  else if(pct>=70){trophy='🥈';title='جيد جداً!';sub='قريب من القمة!';}
+  else if(pct>=50){trophy='🥉';title='جيد!';sub='يمكنك التحسين!';}
+  else{trophy='📚';title='تحتاج مراجعة!';sub='راجع الدرس وحاول مجدداً!';}
+  document.getElementById('resultTrophy').textContent=trophy;
+  document.getElementById('resultTitle').textContent=title;
+  document.getElementById('resultSubtitle').textContent=sub;
+  const list=document.getElementById('summaryList');
+  list.innerHTML='';
+  userAnswers.forEach((a,i)=>{
+    const div=document.createElement('div');
+    div.className=`summary-item ${a.isCorrect?'s-correct':'s-wrong'}`;
+    div.style.animationDelay=`${i*.05}s`;
+    div.innerHTML=`
+      <div class="s-q">${i+1}. ${a.text}</div>
+      <div class="s-a">${a.isCorrect?'✅ أجبت صح':`❌ أجبت غلط<div class="s-correct-ans">✅ الصحيح: ${a.modelAnswer}</div>`}</div>`;
+    list.appendChild(div);
+  });
+}
+</script>
+</body>
+</html>
