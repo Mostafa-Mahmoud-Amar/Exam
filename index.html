@@ -6,16 +6,9 @@
 <title>مراجعات الصف الثالث الثانوي 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --gold:#FFD700; --gold2:#FFA500; --blue-dark:#0a0e2a;
-  --blue-light:#2d3a8c; --green:#00e676; --red:#ff1744;
-  --cyan:#00e5ff; --purple:#7c4dff; --white:#fff;
-  --card-bg:rgba(255,255,255,0.06);
-}
+:root{--gold:#FFD700;--gold2:#FFA500;--blue-dark:#0a0e2a;--blue-light:#2d3a8c;--green:#00e676;--red:#ff1744;--cyan:#00e5ff;--purple:#7c4dff;--white:#fff;--card-bg:rgba(255,255,255,0.06);}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--white);min-height:100vh;overflow-x:hidden;}
-
-/* BG */
 .bg-stars{position:fixed;inset:0;z-index:0;pointer-events:none;}
 .star{position:absolute;border-radius:50%;background:white;animation:twinkle var(--d) ease-in-out infinite alternate;opacity:0;}
 @keyframes twinkle{0%{opacity:0;transform:scale(.5);}100%{opacity:.8;transform:scale(1);}}
@@ -24,38 +17,25 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
 .orb2{width:400px;height:400px;background:rgba(124,77,255,.2);bottom:-100px;left:-100px;animation-delay:2s;}
 .orb3{width:300px;height:300px;background:rgba(255,215,0,.1);top:50%;left:50%;animation-delay:4s;}
 @keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(30px,30px) scale(1.1);}}
-
 .container{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px;}
-
-/* HEADER */
 .header{text-align:center;padding:40px 20px 25px;animation:slideDown .8s ease;}
 .crown{font-size:3rem;animation:bounce 2s infinite;display:inline-block;}
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.header h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.5rem,4vw,2.6rem);font-weight:900;
-  background:linear-gradient(135deg,var(--gold),var(--gold2),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0 4px;line-height:1.3;}
+.header h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.5rem,4vw,2.6rem);font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0 4px;line-height:1.3;}
 .header p{color:rgba(255,255,255,.6);font-size:.95rem;}
 @keyframes slideDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
-
-/* HOME */
 .lessons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:28px;}
-.lesson-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px 22px;
-  cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden;backdrop-filter:blur(10px);text-align:center;
-  animation:fadeInUp .6s ease backwards;}
+.lesson-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px 22px;cursor:pointer;transition:all .3s;text-align:center;backdrop-filter:blur(10px);animation:fadeInUp .6s ease backwards;}
 .lesson-card:nth-child(1){animation-delay:.1s;}.lesson-card:nth-child(2){animation-delay:.2s;}.lesson-card:nth-child(3){animation-delay:.3s;}
 .lesson-card:hover{transform:translateY(-8px) scale(1.02);border-color:var(--gold);box-shadow:0 20px 60px rgba(255,215,0,.2);}
 .lesson-icon{font-size:2.8rem;margin-bottom:12px;display:block;}
 .lesson-card h2{font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:6px;}
 .lesson-card p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.5;}
-.lesson-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;
-  font-weight:700;padding:4px 14px;border-radius:20px;font-size:.82rem;margin-top:10px;}
+.lesson-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:700;padding:4px 14px;border-radius:20px;font-size:.82rem;margin-top:10px;}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-
-/* QUIZ HEADER */
 #quizScreen{display:none;animation:fadeIn .5s ease;}
 .quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px;}
-.btn-back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;padding:10px 18px;
-  border-radius:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:.92rem;transition:all .3s;display:flex;align-items:center;gap:6px;}
+.btn-back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;padding:10px 18px;border-radius:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:.92rem;transition:all .3s;}
 .btn-back:hover{background:rgba(255,255,255,.2);}
 .progress-bar-wrap{flex:1;max-width:280px;}
 .progress-label{font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:4px;text-align:center;}
@@ -63,10 +43,7 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
 .progress-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:10px;transition:width .5s ease;}
 .score-display{display:flex;gap:14px;font-size:.9rem;font-weight:700;}
 .score-correct{color:var(--green);}.score-wrong{color:var(--red);}
-
-/* QUESTION CARD */
-.question-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:22px;
-  padding:32px;margin-bottom:18px;backdrop-filter:blur(10px);animation:cardSlideIn .4s ease;}
+.question-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:32px;margin-bottom:18px;backdrop-filter:blur(10px);animation:cardSlideIn .4s ease;}
 @keyframes cardSlideIn{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 .q-type-badge{display:inline-block;padding:5px 15px;border-radius:20px;font-size:.78rem;font-weight:700;margin-bottom:13px;}
 .badge-fill{background:rgba(0,229,255,.15);color:var(--cyan);border:1px solid var(--cyan);}
@@ -74,108 +51,74 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
 .badge-write{background:rgba(124,77,255,.15);color:#b388ff;border:1px solid var(--purple);}
 .q-number{font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:6px;}
 .q-text{font-size:clamp(.98rem,2.3vw,1.18rem);font-weight:700;line-height:1.75;color:var(--white);margin-bottom:22px;}
-
-/* ===== TRUE/FALSE ===== */
-.tf-buttons{display:flex;gap:14px;margin-top:5px;}
-.tf-btn{flex:1;padding:18px;border-radius:16px;border:2px solid;font-family:'Cairo',sans-serif;
-  font-size:1.2rem;font-weight:900;cursor:pointer;transition:all .25s ease;}
+.tf-buttons{display:flex;gap:14px;}
+.tf-btn{flex:1;padding:18px;border-radius:16px;border:2px solid;font-family:'Cairo',sans-serif;font-size:1.2rem;font-weight:900;cursor:pointer;transition:all .25s;}
 .tf-btn-true{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.4);color:var(--green);}
 .tf-btn-false{background:rgba(255,23,68,.08);border-color:rgba(255,23,68,.4);color:var(--red);}
 .tf-btn:hover:not(:disabled){transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.3);}
-.tf-btn.correct{background:rgba(0,230,118,.25);border-color:var(--green);animation:pulse-green .5s ease;}
+.tf-btn.correct{background:rgba(0,230,118,.25);border-color:var(--green);animation:pulseG .5s ease;}
 .tf-btn.wrong{background:rgba(255,23,68,.25);border-color:var(--red);animation:shake .5s ease;}
-@keyframes pulse-green{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
+@keyframes pulseG{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
 @keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
-
-/* ===== WRITE ANSWER ===== */
 .write-area{display:flex;flex-direction:column;gap:12px;}
-.answer-input{width:100%;min-height:90px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);
-  border-radius:14px;padding:14px 16px;color:white;font-family:'Cairo',sans-serif;font-size:1rem;
-  resize:vertical;transition:border-color .3s;}
+.answer-input{width:100%;min-height:85px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:14px;padding:14px 16px;color:white;font-family:'Cairo',sans-serif;font-size:1rem;resize:vertical;transition:border-color .3s;}
 .answer-input:focus{outline:none;border-color:var(--cyan);}
 .answer-input::placeholder{color:rgba(255,255,255,.3);}
-.btn-show-answer{padding:13px 24px;background:linear-gradient(135deg,var(--blue-light),var(--purple));
-  border:none;border-radius:13px;color:white;font-family:'Cairo',sans-serif;font-size:1rem;
-  font-weight:700;cursor:pointer;transition:all .3s;align-self:flex-start;}
-.btn-show-answer:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,77,255,.4);}
-.model-answer{background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.3);border-radius:14px;
-  padding:16px 18px;display:none;animation:fadeIn .3s ease;}
+.btn-show-answer{padding:13px 24px;background:linear-gradient(135deg,var(--blue-light),var(--purple));border:none;border-radius:13px;color:white;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all .3s;align-self:flex-start;}
+.btn-show-answer:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,77,255,.4);}
+.btn-show-answer:disabled{opacity:.5;cursor:default;}
+.model-answer{background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.3);border-radius:14px;padding:16px 18px;display:none;animation:fadeIn .3s ease;}
 .model-answer .ma-label{font-size:.82rem;color:var(--cyan);font-weight:700;margin-bottom:8px;}
-.model-answer .ma-text{font-size:1rem;line-height:1.7;color:rgba(255,255,255,.9);}
-.self-check{display:none;flex-direction:column;gap:10px;margin-top:12px;animation:fadeIn .3s ease;}
+.model-answer .ma-text{font-size:1rem;line-height:1.7;color:rgba(255,255,255,.9);white-space:pre-line;}
+.self-check{display:none;flex-direction:column;gap:10px;margin-top:10px;animation:fadeIn .3s ease;}
 .self-check p{font-size:.95rem;color:rgba(255,255,255,.7);text-align:center;}
 .self-check-btns{display:flex;gap:12px;}
-.sc-btn{flex:1;padding:13px;border-radius:13px;border:2px solid;font-family:'Cairo',sans-serif;
-  font-size:1rem;font-weight:700;cursor:pointer;transition:all .25s;}
+.sc-btn{flex:1;padding:13px;border-radius:13px;border:2px solid;font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all .25s;}
 .sc-correct{background:rgba(0,230,118,.1);border-color:var(--green);color:var(--green);}
 .sc-wrong{background:rgba(255,23,68,.1);border-color:var(--red);color:var(--red);}
-.sc-btn:hover{transform:translateY(-3px);}
-
-/* FEEDBACK */
-.feedback-box{margin-top:13px;padding:12px 16px;border-radius:12px;font-size:.93rem;font-weight:700;display:none;animation:fadeIn .3s ease;}
+.sc-btn:hover:not(:disabled){transform:translateY(-3px);}
+.sc-btn:disabled{opacity:.5;cursor:default;}
+.feedback-box{margin-top:13px;padding:12px 16px;border-radius:12px;font-size:.93rem;font-weight:700;display:none;animation:fadeIn .3s ease;line-height:1.6;}
 .feedback-box.correct{background:rgba(0,230,118,.1);border:1px solid var(--green);color:var(--green);}
 .feedback-box.wrong{background:rgba(255,23,68,.1);border:1px solid var(--red);color:var(--red);}
-
-/* NEXT BUTTON */
-.btn-next{display:none;width:100%;margin-top:18px;padding:15px;
-  background:linear-gradient(135deg,var(--blue-light),var(--purple));
-  border:none;border-radius:15px;color:white;font-family:'Cairo',sans-serif;
-  font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .3s;}
+.btn-next{display:none;width:100%;margin-top:18px;padding:15px;background:linear-gradient(135deg,var(--blue-light),var(--purple));border:none;border-radius:15px;color:white;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .3s;}
 .btn-next:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(124,77,255,.4);}
-
-/* RESULTS */
 #resultsScreen{display:none;animation:fadeIn .6s ease;}
-.results-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:22px;
-  padding:38px 28px;text-align:center;backdrop-filter:blur(10px);}
+.results-card{background:var(--card-bg);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:38px 28px;text-align:center;backdrop-filter:blur(10px);}
 .result-trophy{font-size:5rem;animation:bounce 2s infinite;display:inline-block;margin-bottom:12px;}
 .result-title{font-size:1.9rem;font-weight:900;color:var(--gold);margin-bottom:8px;}
 .result-subtitle{color:rgba(255,255,255,.6);margin-bottom:25px;}
-.score-percent{font-size:3.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--cyan));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0;}
+.score-percent{font-size:3.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0;}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
 .stat-box{background:rgba(255,255,255,.05);border-radius:14px;padding:18px 8px;border:1px solid rgba(255,255,255,.1);}
 .stat-box .num{font-size:2.3rem;font-weight:900;}.stat-box .lbl{font-size:.82rem;color:rgba(255,255,255,.6);margin-top:4px;}
 .stat-correct .num{color:var(--green);}.stat-wrong .num{color:var(--red);}.stat-total .num{color:var(--cyan);}
 .summary-title{font-size:1.2rem;font-weight:700;color:var(--gold);margin:28px 0 13px;text-align:right;}
 .summary-list{display:flex;flex-direction:column;gap:9px;}
-.summary-item{background:rgba(255,255,255,.04);border-radius:13px;padding:14px 16px;text-align:right;
-  border-right:4px solid;animation:fadeInUp .4s ease backwards;}
+.summary-item{background:rgba(255,255,255,.04);border-radius:13px;padding:14px 16px;text-align:right;border-right:4px solid;animation:fadeInUp .4s ease backwards;}
 .summary-item.s-correct{border-color:var(--green);}.summary-item.s-wrong{border-color:var(--red);}
 .summary-item .s-q{font-size:.92rem;font-weight:700;color:white;line-height:1.6;margin-bottom:5px;}
 .summary-item .s-a{font-size:.85rem;}
 .s-correct .s-a{color:var(--green);}.s-wrong .s-a{color:rgba(255,255,255,.5);}
-.s-wrong .s-correct-ans{color:var(--green);margin-top:3px;font-size:.83rem;}
-.btn-retry,.btn-home{padding:13px 28px;border:none;border-radius:13px;font-family:'Cairo',sans-serif;
-  font-size:.98rem;font-weight:700;cursor:pointer;transition:all .3s;margin:7px;}
+.s-wrong .s-correct-ans{color:var(--green);margin-top:3px;font-size:.83rem;white-space:pre-line;}
+.action-btns{margin-top:20px;}
+.btn-retry,.btn-home{padding:13px 28px;border:none;border-radius:13px;font-family:'Cairo',sans-serif;font-size:.98rem;font-weight:700;cursor:pointer;transition:all .3s;margin:7px;}
 .btn-retry{background:linear-gradient(135deg,var(--green),#00bcd4);color:#000;}
 .btn-home{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;}
 .btn-retry:hover,.btn-home:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.3);}
-
 .footer{text-align:center;padding:28px;color:rgba(255,255,255,.3);font-size:.83rem;}
 .footer span{color:var(--gold);font-weight:700;}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-
-/* Confetti */
 .confetti-piece{position:fixed;top:-20px;border-radius:2px;animation:confettiFall linear forwards;z-index:999;pointer-events:none;}
 @keyframes confettiFall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
-
-@media(max-width:600px){
-  .question-card{padding:20px;}
-  .stats-grid{gap:7px;}.stat-box{padding:12px 5px;}.stat-box .num{font-size:1.8rem;}
-  .quiz-header{flex-direction:column;align-items:stretch;}.score-display{justify-content:center;}
-  .tf-buttons{flex-direction:column;}
-}
+@media(max-width:600px){.question-card{padding:20px;}.stats-grid{gap:7px;}.stat-box{padding:12px 5px;}.stat-box .num{font-size:1.8rem;}.quiz-header{flex-direction:column;align-items:stretch;}.score-display{justify-content:center;}.tf-buttons{flex-direction:column;}.self-check-btns{flex-direction:column;}}
 </style>
 </head>
 <body>
-
 <div class="bg-stars" id="bgStars"></div>
-<div class="bg-orb orb1"></div>
-<div class="bg-orb orb2"></div>
-<div class="bg-orb orb3"></div>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="bg-orb orb3"></div>
 
 <div class="container">
-
   <div class="header">
     <span class="crown">🎓</span>
     <h1>مراجعات الثالث الثانوي 2026</h1>
@@ -219,7 +162,6 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
         <span class="score-wrong">❌ <span id="scoreWrong">0</span></span>
       </div>
     </div>
-
     <div class="question-card" id="questionCard">
       <div class="q-type-badge" id="qTypeBadge"></div>
       <div class="q-number" id="qNumber"></div>
@@ -234,15 +176,15 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
   <div id="resultsScreen">
     <div class="results-card">
       <span class="result-trophy" id="resultTrophy">🏆</span>
-      <div class="result-title" id="resultTitle">أحسنت!</div>
-      <div class="result-subtitle" id="resultSubtitle">إليك نتيجتك</div>
+      <div class="result-title" id="resultTitle"></div>
+      <div class="result-subtitle" id="resultSubtitle"></div>
       <div class="score-percent" id="scorePercent">0%</div>
       <div class="stats-grid">
         <div class="stat-box stat-correct"><div class="num" id="rCorrect">0</div><div class="lbl">✅ صح</div></div>
         <div class="stat-box stat-wrong"><div class="num" id="rWrong">0</div><div class="lbl">❌ غلط</div></div>
         <div class="stat-box stat-total"><div class="num" id="rTotal">0</div><div class="lbl">📝 إجمالي</div></div>
       </div>
-      <div>
+      <div class="action-btns">
         <button class="btn-retry" onclick="retryLesson()">🔄 إعادة المحاولة</button>
         <button class="btn-home" onclick="goHome()">🏠 الرئيسية</button>
       </div>
@@ -255,7 +197,7 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
 </div>
 
 <script>
-// ===== STARS =====
+// STARS
 (function(){
   const bg=document.getElementById('bgStars');
   for(let i=0;i<120;i++){
@@ -266,11 +208,10 @@ body{font-family:'Cairo',sans-serif;background:var(--blue-dark);color:var(--whit
   }
 })();
 
-// ===== CONFETTI =====
 function launchConfetti(mini=false){
   const colors=['#FFD700','#00e676','#00e5ff','#ff6090','#b388ff','#ff9800'];
-  const count=mini?15:60;
-  for(let i=0;i<count;i++){
+  const n=mini?15:60;
+  for(let i=0;i<n;i++){
     setTimeout(()=>{
       const c=document.createElement('div');c.className='confetti-piece';
       c.style.cssText=`left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};width:${Math.random()*10+5}px;height:${Math.random()*10+5}px;animation-duration:${Math.random()*2+1.5}s;border-radius:${Math.random()>.5?'50%':'2px'}`;
@@ -279,21 +220,18 @@ function launchConfetti(mini=false){
   }
 }
 
-// ===== SHUFFLE =====
 function shuffle(arr){
   const a=[...arr];
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
 
-// ===== DATA =====
-// أنواع الأسئلة:
-// 'tf'    → صح أم خطأ (زرارين)
-// 'write' → الطالب يكتب ويقارن بالإجابة بنفسه
-// 'fill'  → إكمال: الطالب يكتب ويقارن
+// ===================== DATA =====================
+// kind: 'tf' = صح/خطأ زرارين | 'fill' = إكمال يكتب | 'write' = كتابة حرة
 
 const LESSONS = [
-// =========== الدرس الأول ===========
+
+// ======= الدرس الأول =======
 { name:'الدرس الأول', questions:[
   { kind:'write', type:'بم تفسر', badge:'badge-write',
     text:'فسّر: حدوث العديد من المخاطر البيئية في الآونة الأخيرة',
@@ -312,9 +250,10 @@ const LESSONS = [
     answer:'لأن الفقر يؤدي إلى انعدام الأمن الغذائي وتدني مستويات الصرف الصحي وقلة مياه الشرب النظيفة وسوء التغذية والتلوث البيئي، كل هذه العوامل تتسبب في انتشار الأمراض.' },
 ]},
 
-// =========== الدرس الثاني ===========
+// ======= الدرس الثاني =======
 { name:'الدرس الثاني', questions:[
-  // إكمال العبارات
+
+  // ===== إكمال العبارات =====
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'بناء هندسي يُقام فوق وادٍ أو منخفض بهدف حجز المياه وللحماية من الفيضان والجفاف ...',
     answer:'السـد' },
@@ -329,7 +268,7 @@ const LESSONS = [
     answer:'الفائض التجاري' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'أهم السدود في مصر ...',
-    answer:'السد العالي - سد قوشية - سد إسنا - سد الروافعة - سد الكفرة' },
+    answer:'السد العالي - سد قوشية - سد اللاهون - سد الروافعة - سد الكفرة' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'أهم القناطر في مصر ...',
     answer:'القناطر الخيرية - قناطر أسيوط - قناطر ديروط - قناطر نجع حمادي - قناطر إدفينا - قناطر زفتى' },
@@ -338,16 +277,16 @@ const LESSONS = [
     answer:'الصحراء الشرقية' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'سد الكفرة قام المصريون ببنائه بهدف التحكم في ...',
-    answer:'الفيضان' },
+    answer:'حجز مياه السيول للاستفادة منها في الزراعة وتنمية سيناء' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'سد ............ تم استخدامه لتنظيم دخول المياه من أجل تخزينها',
-    answer:'سد قوشية' },
+    answer:'سد اللاهون' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'بدأ العمل في إنشاء سد ........... عام 1898 وبلغت سعته التخزينية مليار متر مكعب',
     answer:'سد أسوان' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'تم إنشاء سد بنائي مقوس في منطقة ........... شمال جبل الحلال في وادي العريش وأنشئ عام 1946م لتخزين مياه السيول',
-    answer:'سيناء' },
+    answer:'الروافعة' },
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'أمر محمد علي باشا بتنفيذ ........... عام 1833 ولكن التنفيذ الفعلي بدأ عام 1843',
     answer:'القناطر الخيرية' },
@@ -375,13 +314,14 @@ const LESSONS = [
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'قناطر زفتى تم بناؤها عام ........... في عهد الخديوي عباس حلمي الثاني وأُعيد تجديدها عام 1954',
     answer:'1902' },
-  // صح أم خطأ
+
+  // ===== صح أم خطأ =====
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
     text:'القناطر تستطيع حفظ كميات أكبر من المياه لعدة سنوات',
     answer:'خطأ ✗ — السدود هي التي تحفظ كميات كبيرة من المياه لعدة سنوات، القناطر تتحكم في مرور المياه فقط.' },
-  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
+  { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
     text:'السدود لا تستطيع حفظ المياه خلفها لفترة طويلة لكنها ترشد المياه',
-    answer:'خطأ ✗ — السدود تستطيع حجز المياه لفترات طويلة، أما القناطر فهي التي تتحكم في مرور المياه.' },
+    answer:'خطأ ✗ — السدود تستطيع حجز المياه لفترات طويلة جداً، أما القناطر فهي التي لا تحجز المياه بل تنظم مرورها.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
     text:'قناطر نجع حمادي أُنشئت في عهد الملك فؤاد الثاني وافتُتحت عام 1930',
     answer:'خطأ ✗ — أُنشئت في عهد الملك فؤاد الأوّل وليس الثاني.' },
@@ -390,14 +330,15 @@ const LESSONS = [
     answer:'خطأ ✗ — أُعيد تجديدها عام 1954م.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
     text:'يوجد سد واحد في مصر هو السد العالي',
-    answer:'خطأ ✗ — في مصر عدة سدود: السد العالي، سد قوشية، سد إسنا، سد الروافعة، سد الكفرة وغيرها.' },
+    answer:'خطأ ✗ — في مصر عدة سدود: السد العالي، سد قوشية، سد اللاهون، سد الروافعة، سد الكفرة وغيرها.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
     text:'الغرض من إنشاء القناطر الخيرية هو رفع منسوب المياه',
     answer:'صح ✓ — الهدف من القناطر الخيرية هو رفع منسوب مياه النيل لتيسير الري.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
     text:'تم بناء قناطر إسنا الجديدة خلف القناطر القديمة',
     answer:'صح ✓ — قناطر إسنا الجديدة بُنيت خلف القديمة.' },
-  // بم تفسر
+
+  // ===== بم تفسر =====
   { kind:'write', type:'بم تفسر', badge:'badge-write',
     text:'فسّر: أهمية السدود عند إنشائها',
     answer:'لأنها تحجز المياه وتخزّنها لتوليد الكهرباء وتوفير مياه الري والشرب والحماية من خطر الفيضانات والجفاف.' },
@@ -422,7 +363,8 @@ const LESSONS = [
   { kind:'write', type:'بم تفسر', badge:'badge-write',
     text:'فسّر: أهمية قناطر زفتى',
     answer:'تتحكم في تدفق مياه النيل وتنظّمه، وهي من الآثار المعمارية الفريدة التي بُنيت في عهد الخديوي عباس حلمي الثاني.' },
-  // اكتب ما تشير إليه
+
+  // ===== اكتب ما تشير إليه =====
   { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
     text:'إنشاء هندسي يُقام فوق وادٍ أو منخفض بهدف حجز المياه واستخدامها في توليد الكهرباء',
     answer:'السـد' },
@@ -441,15 +383,16 @@ const LESSONS = [
   { kind:'write', type:'اكتب ما تشير إليه', badge:'badge-write',
     text:'قناطر تحجز مياه النيل عن مياه البحر المتوسط وهي الممر الذي يربط كفر الشيخ بالإسكندرية',
     answer:'قناطر إدفينا' },
-  // من هو
+
+  // ===== من هو =====
   { kind:'write', type:'من هو؟', badge:'badge-write',
     text:'شُيِّد في عهده السد العالي وتم افتتاحه في 15 يناير 1971م',
     answer:'جمال عبد الناصر (بدأ الإنشاء) وأنور السادات (الافتتاح)' },
   { kind:'write', type:'من هو؟', badge:'badge-write',
-    text:'بنى سد قوشية — أول سد في التاريخ قبل 2900 ق.م',
+    text:'بنى سد قوشية — أول سد في تاريخ البشرية قبل 2900 ق.م',
     answer:'الملك مينا' },
   { kind:'write', type:'من هو؟', badge:'badge-write',
-    text:'سد قام المصريون بتأسيسه في وادٍ بالصحراء الشرقية عام 2650 ق.م بهدف التحكم في الفيضان',
+    text:'سد قام المصريون بتأسيسه في وادٍ بالصحراء الشرقية عام 2650 ق.م بهدف حجز مياه السيول',
     answer:'سد الكفرة' },
   { kind:'write', type:'من هو؟', badge:'badge-write',
     text:'تم بناء قناطر إسنا في عهده عام 1908 للتحكم في تدفق المياه أثناء الفيضان',
@@ -466,15 +409,17 @@ const LESSONS = [
   { kind:'write', type:'من هو؟', badge:'badge-write',
     text:'تم في عهده بناء قناطر زفتى عام 1902',
     answer:'الخديوي عباس حلمي الثاني' },
-  // اكتب ما تعرفه
+
+  // ===== اكتب ما تعرفه =====
   { kind:'write', type:'اكتب ما تعرفه', badge:'badge-write',
     text:'الفرق بين القناطر والسدود',
-    answer:'السد: بناء هندسي يُقام فوق وادٍ لحجز كميات كبيرة من المياه لسنوات وتوليد الكهرباء.\nالقنطرة: حاجز إنشائي يعترض مجرى النهر وبه بوابات تتحكم في مرور المياه وترفع منسوبها دون تخزينها.' },
+    answer:'السدود: تستطيع حفظ كميات كبيرة من المياه لعدة سنوات وتُستخدم لتوليد الكهرباء وحماية من الفيضان.\nالقناطر: لا تستطيع حفظ المياه خلفها لفترة طويلة لكنها تساهم بشكل كبير في ترشيد وري الأراضي الزراعية.' },
 ]},
 
-// =========== الدرس الثالث ===========
+// ======= الدرس الثالث =======
 { name:'الدرس الثالث', questions:[
-  // إكمال
+
+  // ===== إكمال =====
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'أهم المشكلات البيئية ...',
     answer:'تغير المناخ، وفقدان التنوع البيولوجي، وتلوث البيئة' },
@@ -499,7 +444,8 @@ const LESSONS = [
   { kind:'fill', type:'إكمال العبارات', badge:'badge-fill',
     text:'سد الكفرة قام المصريون بتأسيسه في وادٍ ........... وقد بُني تقريباً عام 2650 ق.م',
     answer:'في الصحراء الشرقية' },
-  // صح وخطأ
+
+  // ===== صح أم خطأ =====
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
     text:'الأنشطة البشرية والتحضر والعولمة وزيادة عمليات التصنيع أدت إلى مشاكل بيئية',
     answer:'صح ✓ — هذه العوامل مجتمعةً أفرزت مشاكل بيئية خطيرة.' },
@@ -525,7 +471,7 @@ const LESSONS = [
     text:'الفقر من التحديات المستمرة التي تعترف بها معظم الجهات الإنسانية',
     answer:'صح ✓ — الفقر معترف به دولياً كتحدٍّ إنساني رئيسي.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
-    text:'يساهم الفقر في ظهور العديد من الأنماط التي تؤدي إلى تأثيرات إيجابية على النظم البيئية',
+    text:'يساهم الفقر في ظهور أنماط تؤدي إلى تأثيرات إيجابية على النظم البيئية',
     answer:'خطأ ✗ — الفقر يؤدي إلى تأثيرات سلبية على النظم البيئية لا إيجابية.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
     text:'الخلل في النظام البيئي يحدث بسبب الاستغلال المفرط للموارد الحيوانية والنباتية وحرق الغابات',
@@ -540,10 +486,10 @@ const LESSONS = [
     text:'زيادة ملوحة مجاري الأنهار ليس لها علاقة بنقص المياه العذبة',
     answer:'خطأ ✗ — زيادة ملوحة الأنهار تقلل المياه العذبة الصالحة للاستخدام مباشرةً.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
-    text:'بالرغم من زيادة معدلات الإنتاج الغذائي عن معدلات النمو السكاني إلا أن هذه الممارسات أدت إلى انخفاض جودة المنتجات والأرض الزراعية',
+    text:'بالرغم من زيادة معدلات الإنتاج الغذائي إلا أن هذه الممارسات أدت إلى انخفاض جودة المنتجات والأرض الزراعية',
     answer:'صح ✓ — الضغط على الإنتاج الزراعي أضرّ بخصوبة التربة وجودة المنتجات.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
-    text:'لا توجد علاقة وطيدة بين المعتقدات التي يؤمن بها الشخص وبين تدهور البيئة أو الإساءة إليها',
+    text:'لا توجد علاقة وطيدة بين المعتقدات التي يؤمن بها الشخص وبين تدهور البيئة',
     answer:'خطأ ✗ — المعتقدات الخاطئة تؤثر في السلوك تجاه البيئة وتتسبب في تدهورها.' },
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:true,
     text:'تزداد الأمراض في المجتمعات الفقيرة التي ينعدم أمنها الغذائي',
@@ -569,7 +515,8 @@ const LESSONS = [
   { kind:'tf', type:'صح أم خطأ', badge:'badge-tf', correct:false,
     text:'لا توجد مشكلات بيئية في مصر',
     answer:'خطأ ✗ — توجد في مصر مشكلات بيئية عديدة كتلوث الهواء والمياه وتآكل الأراضي.' },
-  // بم تفسر
+
+  // ===== بم تفسر =====
   { kind:'write', type:'بم تفسر', badge:'badge-write',
     text:'فسّر: حدوث العديد من المخاطر البيئية في الآونة الأخيرة',
     answer:'بسبب الأنشطة البشرية والتحضر والعولمة وزيادة التصنيع والاستهلاك المفرط للموارد.' },
@@ -603,19 +550,13 @@ const LESSONS = [
 ]},
 ];
 
-// ===== STATE =====
+// ===================== STATE =====================
 let currentLesson=0, currentQuestions=[], currentIndex=0;
 let correctCount=0, wrongCount=0, answered=false, userAnswers=[];
 
-// ===== HELPERS =====
-function prepareQuestions(qs){
-  return shuffle(qs); // خلط ترتيب الأسئلة فقط (بدون خلط إجابات لأن الكتابة مفتوحة)
-}
-
-// ===== NAV =====
 function startLesson(idx){
   currentLesson=idx;
-  currentQuestions=prepareQuestions(LESSONS[idx].questions);
+  currentQuestions=shuffle(LESSONS[idx].questions);
   currentIndex=0; correctCount=0; wrongCount=0; userAnswers=[]; answered=false;
   document.getElementById('homeScreen').style.display='none';
   document.getElementById('resultsScreen').style.display='none';
@@ -629,7 +570,6 @@ function goHome(){
 }
 function retryLesson(){ startLesson(currentLesson); }
 
-// ===== SHOW QUESTION =====
 function showQuestion(){
   const q=currentQuestions[currentIndex];
   const total=currentQuestions.length;
@@ -640,8 +580,9 @@ function showQuestion(){
   document.getElementById('qNumber').textContent=`السؤال رقم ${currentIndex+1}`;
   document.getElementById('qText').textContent=q.text;
   document.getElementById('feedbackBox').style.display='none';
-  document.getElementById('btnNext').style.display='none';
-  document.getElementById('btnNext').textContent=currentIndex<total-1?'السؤال التالي ←':'🏆 عرض النتائج';
+  const btnNext=document.getElementById('btnNext');
+  btnNext.style.display='none';
+  btnNext.textContent=currentIndex<total-1?'السؤال التالي ←':'🏆 عرض النتائج';
   answered=false;
 
   const area=document.getElementById('answerArea');
@@ -650,92 +591,87 @@ function showQuestion(){
   if(q.kind==='tf'){
     area.innerHTML=`
       <div class="tf-buttons">
-        <button class="tf-btn tf-btn-true" onclick="answerTF(true)">✅ صح</button>
-        <button class="tf-btn tf-btn-false" onclick="answerTF(false)">❌ خطأ</button>
+        <button class="tf-btn tf-btn-true" id="btnTrue" onclick="answerTF(true)">✅ صح</button>
+        <button class="tf-btn tf-btn-false" id="btnFalse" onclick="answerTF(false)">❌ خطأ</button>
       </div>`;
   } else {
-    // fill or write
-    const label = q.kind==='fill' ? 'أكمل الإجابة:' : 'اكتب إجابتك:';
+    const lbl=q.kind==='fill'?'أكمل العبارة:':'اكتب إجابتك:';
     area.innerHTML=`
       <div class="write-area">
-        <textarea class="answer-input" id="userInput" placeholder="${label}"></textarea>
-        <button class="btn-show-answer" onclick="showModelAnswer()">👁️ أظهر الإجابة الصحيحة</button>
+        <textarea class="answer-input" id="userInput" placeholder="${lbl}"></textarea>
+        <button class="btn-show-answer" id="btnShowAns" onclick="showModelAnswer()">👁️ أظهر الإجابة الصحيحة</button>
         <div class="model-answer" id="modelAnswer">
           <div class="ma-label">✅ الإجابة الصحيحة:</div>
           <div class="ma-text" id="maText"></div>
         </div>
         <div class="self-check" id="selfCheck">
-          <p>كيف كانت إجابتك؟</p>
+          <p>📊 كيف كانت إجابتك؟</p>
           <div class="self-check-btns">
-            <button class="sc-btn sc-correct" onclick="selfMark(true)">✅ صح كنت عارفها</button>
+            <button class="sc-btn sc-correct" onclick="selfMark(true)">✅ كنت عارفها</button>
             <button class="sc-btn sc-wrong" onclick="selfMark(false)">❌ غلطت</button>
           </div>
         </div>
       </div>`;
   }
 
-  // animate
   const card=document.getElementById('questionCard');
   card.style.animation='none'; card.offsetHeight; card.style.animation='cardSlideIn .4s ease';
 }
 
-// ===== TRUE/FALSE =====
-function answerTF(userAnswer){
+function answerTF(userAns){
   if(answered) return;
   answered=true;
   const q=currentQuestions[currentIndex];
-  const isCorrect=(userAnswer===q.correct);
-  const btns=document.querySelectorAll('.tf-btn');
-  btns.forEach(b=>b.disabled=true);
-  // highlight
-  if(userAnswer===true) btns[0].classList.add(isCorrect?'correct':'wrong');
-  else btns[1].classList.add(isCorrect?'correct':'wrong');
-  // if wrong, show which is correct
+  const isCorrect=(userAns===q.correct);
+  const btnT=document.getElementById('btnTrue');
+  const btnF=document.getElementById('btnFalse');
+  btnT.disabled=true; btnF.disabled=true;
+  if(userAns===true) btnT.classList.add(isCorrect?'correct':'wrong');
+  else btnF.classList.add(isCorrect?'correct':'wrong');
   if(!isCorrect){
-    if(q.correct===true) btns[0].classList.add('correct');
-    else btns[1].classList.add('correct');
+    if(q.correct===true) btnT.classList.add('correct');
+    else btnF.classList.add('correct');
   }
   const fb=document.getElementById('feedbackBox');
   fb.className=`feedback-box ${isCorrect?'correct':'wrong'}`;
-  fb.innerHTML=isCorrect?`✅ إجابة صحيحة! ${q.answer}`:`❌ إجابة خاطئة! ${q.answer}`;
+  fb.innerHTML=isCorrect?`✅ إجابة صحيحة!<br><small>${q.answer}</small>`:`❌ إجابة خاطئة!<br><small>${q.answer}</small>`;
   fb.style.display='block';
   if(isCorrect){correctCount++;launchConfetti(true);}else{wrongCount++;}
-  userAnswers.push({text:q.text, isCorrect, modelAnswer:q.answer, kind:'tf'});
+  userAnswers.push({text:q.text, isCorrect, modelAnswer:q.answer});
   updateScore();
   document.getElementById('btnNext').style.display='block';
 }
 
-// ===== SHOW MODEL ANSWER =====
 function showModelAnswer(){
   const q=currentQuestions[currentIndex];
   document.getElementById('maText').textContent=q.answer;
   document.getElementById('modelAnswer').style.display='block';
   document.getElementById('selfCheck').style.display='flex';
-  document.querySelector('.btn-show-answer').disabled=true;
+  document.getElementById('btnShowAns').disabled=true;
 }
 
-// ===== SELF MARK =====
 function selfMark(isCorrect){
   if(answered) return;
   answered=true;
   const q=currentQuestions[currentIndex];
   document.querySelectorAll('.sc-btn').forEach(b=>b.disabled=true);
   if(isCorrect){correctCount++;launchConfetti(true);}else{wrongCount++;}
-  userAnswers.push({text:q.text, isCorrect, modelAnswer:q.answer, kind:q.kind});
+  userAnswers.push({text:q.text, isCorrect, modelAnswer:q.answer});
   updateScore();
   document.getElementById('btnNext').style.display='block';
 }
 
 function nextQuestion(){
+  if(!answered) return;
   if(currentIndex<currentQuestions.length-1){currentIndex++;showQuestion();}
   else{showResults();}
 }
+
 function updateScore(){
   document.getElementById('scoreCorrect').textContent=correctCount;
   document.getElementById('scoreWrong').textContent=wrongCount;
 }
 
-// ===== RESULTS =====
 function showResults(){
   document.getElementById('quizScreen').style.display='none';
   document.getElementById('resultsScreen').style.display='block';
@@ -745,10 +681,10 @@ function showResults(){
   document.getElementById('rCorrect').textContent=correctCount;
   document.getElementById('rWrong').textContent=wrongCount;
   document.getElementById('rTotal').textContent=total;
-  let trophy='🏆',title='',sub='';
-  if(pct>=90){trophy='🥇';title='ممتاز! أنت نجم!';sub='أداء رائع، استمر!';launchConfetti();}
-  else if(pct>=70){trophy='🥈';title='جيد جداً!';sub='قريب من القمة!';}
-  else if(pct>=50){trophy='🥉';title='جيد!';sub='يمكنك التحسين!';}
+  let trophy,title,sub;
+  if(pct>=90){trophy='🥇';title='ممتاز! أنت نجم! ⭐';sub='أداء رائع، استمر!';launchConfetti();}
+  else if(pct>=70){trophy='🥈';title='جيد جداً! 👏';sub='قريب من القمة!';}
+  else if(pct>=50){trophy='🥉';title='جيد! 💪';sub='يمكنك التحسين!';}
   else{trophy='📚';title='تحتاج مراجعة!';sub='راجع الدرس وحاول مجدداً!';}
   document.getElementById('resultTrophy').textContent=trophy;
   document.getElementById('resultTitle').textContent=title;
@@ -758,10 +694,13 @@ function showResults(){
   userAnswers.forEach((a,i)=>{
     const div=document.createElement('div');
     div.className=`summary-item ${a.isCorrect?'s-correct':'s-wrong'}`;
-    div.style.animationDelay=`${i*.05}s`;
+    div.style.animationDelay=`${i*.04}s`;
     div.innerHTML=`
       <div class="s-q">${i+1}. ${a.text}</div>
-      <div class="s-a">${a.isCorrect?'✅ أجبت صح':`❌ أجبت غلط<div class="s-correct-ans">✅ الصحيح: ${a.modelAnswer}</div>`}</div>`;
+      <div class="s-a">${a.isCorrect
+        ?'✅ أجبت صح'
+        :`❌ أجبت غلط<div class="s-correct-ans">✅ الإجابة الصحيحة:\n${a.modelAnswer}</div>`
+      }</div>`;
     list.appendChild(div);
   });
 }
